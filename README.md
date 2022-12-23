@@ -14,12 +14,14 @@ NODE TYPE | CPU | RAM | SSD     | Bandwidth
 ### 1 Scripted installation.
 
 ```
-wget -O celestia.sh https://raw.githubusercontent.com/bxdoan/Celestia-Node/main/celestia.sh && chmod +x celestia.sh && screen -S celestia -d -m bash -c "cd $HOME && ./celestia.sh"
+wget -O celestia.sh https://raw.githubusercontent.com/bxdoan/Celestia-Node/main/celestia.sh && chmod +x celestia.sh && ./celestia.sh
 ```
 
 you will see something like this and type your node type you want to run (full, bridge or light):
 ![image](./imgs/choose_type_node.png)
 
+The result will be like this:
+![image](https://docs.celestia.org/assets/images/mocha_light_docker-47b10985b0784499df40395e28023537.gif)
 ## Contact
 [Telegram](https://t.me/bxdoan)
 
