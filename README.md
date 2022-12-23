@@ -7,11 +7,32 @@
 NODE TYPE | CPU | RAM | SSD     | Bandwidth
 | ------------- |-----|-----| -------- | -------- |
 | Mainnet | 4   | 8   | 400-500  | 1 Gbps for Download/100 Mbps for Upload
+
+
 [here](https://docs.celestia.org/nodes/full-storage-node) for more information
 
 ## Install the Celestia node.
 
-### 1 Scripted installation.
+### Open a screen.
+Install screen if you don't have it.
+
+Linux:
+```sh
+sudo apt install screen -y
+```
+
+macOS
+```sh
+brew install screen -y
+```
+
+open a screen
+```sh
+screen -S celestia
+```
+
+### Scripted installation.
+
 
 ```
 wget -O celestia.sh https://raw.githubusercontent.com/bxdoan/Celestia-Node/main/celestia.sh && chmod +x celestia.sh && ./celestia.sh
