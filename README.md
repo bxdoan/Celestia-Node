@@ -9,7 +9,7 @@ NODE TYPE | CPU | RAM | SSD     | Bandwidth
 | Mainnet | 4   | 8   | 400-500  | 1 Gbps for Download/100 Mbps for Upload
 
 
-[here](https://docs.celestia.org/nodes/full-storage-node) for more information
+[here](https://docs.celestia.org/developers/node-tutorial) for more information
 
 ## Install the Celestia node.
 
@@ -47,6 +47,17 @@ The result will be like this:
 Run `docker ps` to show docker container name:
 ![image](./imgs/docker_ps.png)
 
+## Backup your wallet and keys.
+
+Go to inside docker container by using command, replace `<container_name>` by `angry_northcutt` in this case:
+```sh
+docker exec -it <container_name> bash
+```
+
+Run this command to show your wallet and keys, then backup it:
+```sh
+./cel-key list --node.type <node_type> --keyring-backend test
+```
 
 ## Contact
 [Telegram](https://t.me/bxdoan)

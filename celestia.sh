@@ -52,9 +52,9 @@ fi
 
 printf "${GR}Installing Celestia Node...\n${EC}"
 printf "${GR}======================================================\n${EC}"
-image_name=$(curl -s https://api.github.com/repos/celestiaorg/celestia-node/releases/latest | grep -oP '"tag_name": "v\K(.*)(?=")')
-printf "Install latest image: $image_name\n"
-docker run -e NODE_TYPE=$node_type ghcr.io/celestiaorg/celestia-node:$image_name celestia $node_type start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090 --gateway --gateway.addr 0.0.0.0 --gateway.port 26659 --p2p.network mocha
+image_version=$(curl -s https://api.github.com/repos/celestiaorg/celestia-node/releases/latest | grep -oP '"tag_name": "v\K(.*)(?=")')
+printf "Install latest image: $image_version\n"
+docker run -e NODE_TYPE=$node_type ghcr.io/celestiaorg/celestia-node:$image_version celestia $node_type start --core.ip https://limani.celestia-devops.dev --core.grpc.port 9090 --gateway --gateway.addr 0.0.0.0 --gateway.port 26659 --p2p.network mocha
 
 echo "
 # open bash prompt in the container
