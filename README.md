@@ -43,6 +43,11 @@ you will see something like this and type your node type you want to run (full, 
 
 The result will be like this:
 ![image](https://docs.celestia.org/assets/images/mocha_light_docker-47b10985b0784499df40395e28023537.gif)
+
+Run `docker ps` to show docker container name:
+![image](./imgs/docker_ps.png)
+
+
 ## Contact
 [Telegram](https://t.me/bxdoan)
 
