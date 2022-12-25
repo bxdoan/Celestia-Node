@@ -19,7 +19,7 @@ if [ ! $node_type ]; then
 	read -p "Enter your NODE TYPE you want to run (light/bridge/full): " node_type
 fi
 
- check directory Celestia-Node if not exist then clone else pull from github
+# check directory Celestia-Node if not exist then clone else pull from github
 if [ ! -d "$HOME/$repo_name" ]; then
   printf "${GR}Cloning Celestia-Node...\n${EC}"
   printf "${GR}======================================================\n${EC}"
