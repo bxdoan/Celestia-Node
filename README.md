@@ -50,23 +50,24 @@ Run `docker ps` to show docker container name:
 ## Setup inside docker container.
 copy bash script into docker container
 ```shell
-docker cp "$HOME/$repo_name/setup_inside.sh" "$CONTAINER_NAME":/root/setup_inside.sh
+#docker cp "$HOME/$repo_name/setup_inside.sh" "$CONTAINER_NAME":/root/setup_inside.sh
 
-docker cp Celestia-Node/setup_inside.sh unruffled_shockley:/root/setup_inside.sh
+docker_image=$(docker ps | grep ghcr.io/celestiaorg | awk '{print $NF}')
+docker cp $HOME/Celestia-Node/setup_inside.sh "$docker_image":/root/setup_inside.sh
 ```
 and execute it
 ```shell
-docker exec -it "$CONTAINER_NAME" bash /root/setup_inside.sh
+#docker exec -it "$CONTAINER_NAME" bash /root/setup_inside.sh
 
-docker exec -it unruffled_shockley bash /root/setup_inside.sh
+docker_image=$(docker ps | grep ghcr.io/celestiaorg | awk '{print $NF}')
+docker exec -it $docker_image bash /root/setup_inside.sh
 ```
 ## Backup your wallet and keys.
 
-Go to inside docker container by using command, replace `<container_name>` by `angry_northcutt` in this case:
+Go to inside docker container by using command:
 ```sh
-docker exec -it <container_name> bash
-
-docker exec -it unruffled_shockley bash
+docker_image=$(docker ps | grep ghcr.io/celestiaorg | awk '{print $NF}')
+docker exec -it $docker_image bash
 ```
 
 Run this command to show your wallet and keys, then backup it:
