@@ -47,16 +47,31 @@ The result will be like this:
 Run `docker ps` to show docker container name:
 ![image](./imgs/docker_ps.png)
 
+## Setup inside docker container.
+copy bash script into docker container
+```shell
+docker cp "$HOME/$repo_name/setup_inside.sh" "$CONTAINER_NAME":/root/setup_inside.sh
+
+docker cp Celestia-Node/setup_inside.sh unruffled_shockley:/root/setup_inside.sh
+```
+and execute it
+```shell
+docker exec -it "$CONTAINER_NAME" bash /root/setup_inside.sh
+
+docker exec -it unruffled_shockley bash /root/setup_inside.sh
+```
 ## Backup your wallet and keys.
 
 Go to inside docker container by using command, replace `<container_name>` by `angry_northcutt` in this case:
 ```sh
 docker exec -it <container_name> bash
+
+docker exec -it unruffled_shockley bash
 ```
 
 Run this command to show your wallet and keys, then backup it:
 ```sh
-./cel-key list --node.type <node_type> --keyring-backend test
+~/celestia-node/cel-key list --node.type light --keyring-backend test
 ```
 
 ## Contact
